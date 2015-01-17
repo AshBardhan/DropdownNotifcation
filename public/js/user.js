@@ -1,0 +1,5 @@
+var userFlow = {
+  initNotificationPage : function(){
+
+  }
+};
