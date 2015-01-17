@@ -5,7 +5,7 @@ exports.showHomePage = function (req, res) {
 };
 
 exports.fetchNotification = function (req, res) {
-  var count = req.body.count || 1,
+  var count = req.query.count || 1,
     messages = [];
   for (var i = 0; i < count; i++) {
     var randomNumber = Math.floor(Math.random() * notifications.length);
