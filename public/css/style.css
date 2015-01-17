@@ -1,8 +1,113 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  background: #ababab;
 }
 
 a {
   color: #00B7FF;
+}
+
+header {
+  background: #ddd;
+}
+
+header .container {
+  margin: 0px auto;
+  width: 800px;
+  height: 35px;
+  padding: 5px 10px;
+}
+
+.notify-icon {
+  position: relative;
+  float: right;
+}
+
+.notify-icon .notify-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #ff0000;
+  border: 2px solid #fff;
+  color: #fff;
+  width: 20px;
+  font-size: 10px;
+  text-align: center;
+  padding: 4px 0;
+  font-weight: bold;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+}
+
+.notify-icon .notify-box {
+  position: absolute;
+  display: none;
+  top: 55px;
+  width: 200px;
+  left: -86px;
+  color: #666;
+  font-size: 12px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
+.notify-icon .notify-box::before {
+  content: "";
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+  position: absolute;
+  top: -10px;
+  left: 90px;
+}
+
+.notify-box .notify-header {
+  background: #fff;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.notify-box .notify-header .notify-total-count {
+  background: #ff0000;
+  color: #fff;
+  width: 20px;
+  font-size: 10px;
+  text-align: center;
+  padding: 4px 0;
+  font-weight: bold;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  display: inline-block;
+  margin-left: 5px;
+
+}
+
+.notify-box #yes-list, .notify-box #no-list {
+  background: #efefef;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+
+.notify-box #no-list {
+  padding: 10px;
+}
+
+.notify-box #yes-list .message {
+  padding: 10px;
+  border-top: 1px solid #bbb;
+}
+
+.notify-box #yes-list .message.new{
+  background: #dcdcdc;
+}
+
+.hide {
+  display: none !important;
 }

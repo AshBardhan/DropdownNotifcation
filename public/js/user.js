@@ -21,20 +21,38 @@ var userFlow = {
     setInterval(function () {
       userFlow.fetchNotification(false);
     }, 10000);
+    $('.notify-icon').on('click', function () {
+      $('.notify-box').fadeIn();
+      localStorage.setItem('count', 0);
+      $('#yes-list .message').removeClass('new');
+    });
+    $(document).on('keyup', function (e) {
+      if (e.which == 27 && $('.notify-box').is(':visible')) {
+        $('.notify-box').fadeOut();
+        $('.notify-count, .notify-total-count').addClass('hide');
+      }
+    });
   },
   fetchNotification: function (isPageLoad) {
     var count = isPageLoad ? localStorage.count : 1;
-    if (count || count != 0) {
+    if (count && count != 0) {
       var success = function (data) {
-        console.log(data);
-        if(!isPageLoad) {
-          localStorage.setItem('count', parseInt(localStorage.count) + 1);
+        if (data.messages && data.messages.length > 0) {
+          var message = '';
+          $.each(data.messages, function (i, j) {
+            message += "<div class='message new'>" + j + "</div>";
+          });
+          if (!isPageLoad) {
+            localStorage.setItem('count', parseInt(localStorage.count) + 1);
+          }
+          $('#yes-list').removeClass('hide').prepend(message);
+          $('#no-list').addClass('hide');
+          $('.notify-count, .notify-total-count').text(localStorage.count <= 99 ? localStorage.count : '99+').removeClass('hide');
         }
       }
       var failure = function (data) {
         console.log(data);
       }
-      console.log(count);
       userFlow._sendAJAXRequest(urls.fetchNotification, {count: count}, "GET", success, failure, "JSON", "application/x-www-form-urlencoded; charset=UTF-8");
     }
   }

@@ -1,8 +1,17 @@
 extends layouts/default
 
 block content
-  h1= title
-  p Welcome to #{title}
+  header
+    .container
+      .notify-icon
+        img(src='/images/bell.png')
+        .notify-count.hide
+        .notify-box
+          .notify-header
+            | Notifications
+            .notify-total-count.hide
+          #yes-list.hide
+          #no-list There is no new notification.
 
 block js
   script.
