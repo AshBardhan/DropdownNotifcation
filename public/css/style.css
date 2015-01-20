@@ -52,7 +52,7 @@ header .container {
 }
 
 .text-italic {
-  font-weight: italic;
+  font-style: italic;
 }
 
 .display-inline {

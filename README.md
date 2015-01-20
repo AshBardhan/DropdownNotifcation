@@ -4,7 +4,7 @@ DropdownNotifcation
 
 Installation
 ===========================
-1. Clone the complete codebase into your prefered location.
+1. Clone the complete codebase into your preferred location.
 2. Download and Install latest versions of NodeJS.
 3. (Optional) Import this project into "IntelliJ IDEA" IDE as Node ExpressJS project. This will add some standard NodeJS packages inside "node_modules" folder.
 4. Use the following command on the location of your project
