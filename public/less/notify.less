@@ -1,0 +1,82 @@
+.notify-icon {
+  position: relative;
+  float: right;
+  cursor: pointer;
+}
+
+.notify-icon .notify-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: @bg-color-alert;
+  border: @border-width-thick @border-style-base;
+  .text-white;
+  width: 20px;
+  .text-xsmall;
+  .text-center;
+  .text-bold;
+  padding: @padding-base 0;
+  .border-radius(@border-radius-half);
+}
+
+.notify-icon .notify-box {
+  position: absolute;
+  .hide;
+  top: 55px;
+  width: 200px;
+  left: -86px;
+  color: @text-color-base;
+  .text-small;
+  .border-radius();
+}
+
+.notify-icon .notify-box::before {
+  content: "";
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid @border-color-white;
+  position: absolute;
+  top: -10px;
+  left: 90px;
+}
+
+.notify-box .notify-header {
+  background: @bg-color-white;
+  padding: @padding-medium;
+  .text-center;
+  .text-bold;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.notify-box .notify-header .notify-total-count {
+  background: @bg-color-alert;
+  .text-white;
+  width: 20px;
+  padding: @padding-base 0;
+  .text-bold;
+  .text-xsmall;
+  .text-center;
+  .border-radius(@border-radius-half);
+  margin-left: @margin-base;
+}
+
+.notify-box #yes-list, .notify-box #no-list {
+  background: @bg-color-light;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+
+.notify-box #no-list {
+  padding: @padding-medium;
+}
+
+.notify-box #yes-list .message {
+  padding: @padding-medium;
+  border-top: @border-width-base @border-style-base @border-color-gray;
+}
+
+.notify-box #yes-list .message.new {
+  background: @bg-color-dark;
+  .text-white;
+}

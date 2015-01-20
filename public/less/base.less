@@ -1,0 +1,91 @@
+body {
+  font: @font-size-base "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  background: @bg-color-body;
+}
+
+header {
+  background: @bg-color-header;;
+}
+
+header .container {
+  margin: 0 auto;
+  width: @max-content-width;
+  height: 35px;
+  padding: @padding-base @padding-medium;
+}
+
+.hide {
+  display: none;
+}
+
+.text-white {
+  color: @text-color-white;
+}
+
+.text-xsmall {
+  font-size: @font-size-xsmall;
+}
+
+.text-small {
+  font-size: @font-size-small;
+}
+
+.text-base {
+  font-size: @font-size-base;
+}
+
+.text-medium {
+  font-size: @font-size-medium;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-italic {
+  font-weight: italic;
+}
+
+.display-inline {
+  display: inline-block;
+}
+
+.border-radius(@border-radius : @border-radius-base) {
+  border-radius: @border-radius;
+  -webkit-border-radius: @border-radius;
+  -moz-border-radius: @border-radius;
+}
+
+.error-box {
+  position: fixed;
+  width: 300px;
+  left: 50%;
+  top: 10%;
+  margin-left: -150px;
+  .border-radius();
+  background: @bg-color-white;
+  color: @text-color-base;
+  .text-small;
+  .text-center;
+  padding: @padding-medium;
+  z-index: 1;
+}
+
+.error-background {
+  background: @bg-color-dark;
+  opacity: 0.75;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
