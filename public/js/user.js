@@ -1,4 +1,5 @@
 var userFlow = {
+  /* Module for using AJAX Request Skeleton */
   _sendAJAXRequest: function (rqUrl, rqData, methodType, success, failure, dataType, contentType) {
     $.ajax({
       url: rqUrl,
@@ -16,22 +17,27 @@ var userFlow = {
       }
     });
   },
+  /* Module for initializing widget and handlers */
   initNotificationPage: function () {
     userFlow.fetchNotification(true);
+    // Polling request for Notification update every 10 seconds
     setInterval(function () {
       userFlow.fetchNotification(false);
     }, 10000);
+    // Showing Notification updates on clicking inside the Icon
     $('.notify-icon').on('click', function (e) {
       e.stopPropagation();
       $('.notify-box').fadeIn();
       localStorage.setItem('count', 0);
       $('#yes-list .message').removeClass('new');
     });
+    // Hiding Error screen on pressing 'Esc' key
     $(document).on('keyup', function (e) {
       if (e.which == 27 && $('.error-box, .error-background').is(':visible')) {
         $('.error-box, .error-background').fadeOut();
       }
     });
+    // Hiding Notification updates on clicking outside the Icon
     $(document).on('click', function (e) {
       if ($('.notify-box').is(':visible')) {
         $('.notify-box').fadeOut();
@@ -39,6 +45,7 @@ var userFlow = {
       }
     });
   },
+  /* Module for fetching Notification results */
   fetchNotification: function (isPageLoad) {
     var count = isPageLoad ? localStorage.count : 1;
     if (count && count != 0) {

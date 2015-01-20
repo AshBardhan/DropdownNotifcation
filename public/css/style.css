@@ -1,3 +1,4 @@
+/* Common CSS Rules */
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
@@ -86,6 +87,7 @@ header .container {
   right: 0;
 }
 
+/* Page-specific CSS Rules for Notification Widget */
 .notify-icon {
   position: relative;
   float: right;
