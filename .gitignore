@@ -1,4 +1,9 @@
-# Created by .gitignore support plugin (hsz.mobi)
-
-.idea/
+### Build related ###
 node_modules/
+
+### IDEA IntelliJ/ PHP Webstorm related ###
+.idea/
+*.iml
+
+### OSX related ###
+.DS_Store
